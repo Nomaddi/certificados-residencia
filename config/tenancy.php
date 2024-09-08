@@ -18,6 +18,8 @@ return [
      */
     'central_domains' => [
         'certificados-residencia.test',
+        
+       
     ],
 
     /**

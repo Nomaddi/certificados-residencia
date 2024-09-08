@@ -24,16 +24,17 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+       
+        $this->routes(function(){
+            // routes/web.php, api.php or any other central route files you have
+            $this->mapWebRoutes();
+            $this->mapApiRoutes();
+        });
         RateLimiter::for('api', function (Request $request) {
             return Limit::perMinute(60)->by($request->user()?->id ?: $request->ip());
        
         });
-        $this->routes(function(){
-            // routes/web.php, api.php or any other central route files you have
-            $this->mapApiRoutes();
-            $this->mapWebRoutes();
-        });
-
+ 
     }
 
    // RouteServiceProvider

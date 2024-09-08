@@ -12,6 +12,7 @@ use Stancl\Tenancy\Events;
 use Stancl\Tenancy\Jobs;
 use Stancl\Tenancy\Listeners;
 use Stancl\Tenancy\Middleware;
+use Stancl\Tenancy\TenancyServiceProvider as TenancyTenancyServiceProvider;
 
 class TenancyServiceProvider extends ServiceProvider
 {
@@ -117,7 +118,6 @@ class TenancyServiceProvider extends ServiceProvider
             }
         }
     }
-
     protected function mapRoutes()
     {
         $this->app->booted(function () {
@@ -127,6 +127,10 @@ class TenancyServiceProvider extends ServiceProvider
             }
         });
     }
+
+
+
+
 
     protected function makeTenancyMiddlewareHighestPriority()
     {
