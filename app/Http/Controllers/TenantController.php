@@ -14,10 +14,8 @@ class TenantController extends Controller
      */
     public function index()
     {
-       
-        return view('Tenant.index', [
-           'inquilinos' => Tenant::all(),
-        ]);
+        $inquilinos = Tenant::all();
+        return view('Tenant.index', compact('inquilinos'));
     
     
 
@@ -85,6 +83,11 @@ class TenantController extends Controller
      */
     public function destroy(Tenant $tenant)
     {
-        //
+       
+        $tenant->delete();
+
+        return redirect()->route('inquilino.index');
+          
+   
     }
 }

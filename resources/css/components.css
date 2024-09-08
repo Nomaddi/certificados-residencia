@@ -3,5 +3,9 @@
 }
 
 .btn-blue {
-    @apply bg-blue-500 text-white hover:bg-blue-700
+    @apply bg-blue-500 text-white hover:bg-blue-700;
+}
+
+.btn-red{
+    @apply bg-red-600 text-white hover:bg-red-700;
 }
