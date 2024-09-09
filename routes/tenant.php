@@ -24,10 +24,24 @@ Route::middleware([
     PreventAccessFromCentralDomains::class,
 ])->group(function () {
     Route::get('/', function () {
-        return 'This is your multi-tenant application. The id of the current tenant is ' . tenant('id');
+        return view('Tenancy.welcome');
     });
 
-    require __DIR__.'/auth.php';    
+    Route::middleware('auth')->group(function () {
+        Route::get('/dashboard', function () {
+            return view('Tenancy.dashboard');
+        })->name('dashboard');
+
+        // Route::get('/profile', function () {
+        //     return view('Tenancy.profile');
+        // })->name('profile');
+
+        // Route::get('/settings', function () {
+        //     return view('Tenancy.settings');
+        // })->name('settings');
+    });
+
+    require __DIR__.'/auth.php';
 });
 
 

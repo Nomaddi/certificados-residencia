@@ -1,22 +1,21 @@
 <x-app-layout>
-
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             Inquilinos
         </h2>
     </x-slot>
 
-    <x-container class="py-12">
-        <div class="card">
-            <div class="card-body">
-                <form action="{{route('inquilino.store')}}" method="POST">
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6">
+                <form action="{{route('tenants.store')}}" method="POST">
                     @csrf
-                   
+
                     <div class="mb-4">
                         <input-label>
                            Nombre
                         </input-label>
-                        <x-text-input name="id" type="text" class="w-full mt-2" placeholder="Ingrese el nombre"/>
+                        <x-text-input name="id" type="text" value="{{ old('id') }}" class="w-full mt-2" placeholder="Ingrese el nombre"/>
                         {{--Mostrar mensajes de error con input-error --}}
                         <x-input-error :messages="$errors->first('id')"/>
                     </div>
@@ -25,15 +24,9 @@
                             Guardar
                         </button>
                     </div>
-                    
+
                 </form>
             </div>
         </div>
-    </x-container>
-
-
-
-
-
-
+    </div>
 </x-app-layout>

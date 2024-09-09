@@ -8,10 +8,10 @@
     [
 
         'name'=> 'Inquilinos',
-        'url' => route('inquilino.index'),
+        'url' => route('tenants.index'),
         'active' => request()->routeIs('inquilino.index')
     ],
-];   
+];
 
 @endphp
 
@@ -30,12 +30,12 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                
+
                     @foreach ( $links as $link )
 
                         <x-nav-link :href="$link['url']" :active="$link['active']">
                              {{ $link['name'] }}
-                        </x-nav-link>  
+                        </x-nav-link>
 
                     @endforeach
                 </div>
@@ -90,15 +90,15 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            
+
             @foreach ( $links as $link )
 
                 <x-responsive-nav-link :href="$link['url']" :active="$link['active']">
                     {{ $link['name'] }}
-                </x-responsive-nav-link> 
-                    
+                </x-responsive-nav-link>
+
             @endforeach
-          
+
         </div>
 
         <!-- Responsive Settings Options -->

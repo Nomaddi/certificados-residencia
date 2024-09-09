@@ -15,12 +15,11 @@ class TenantController extends Controller
      */
     public function index()
     {
-        $inquilinos = Tenant::all();
         return view('Tenant.index', [
-            'inquilinos' => $inquilinos,
+            'tenants' => Tenant::all(),
         ]);
-    
-    
+
+
 
     }
 
@@ -37,18 +36,18 @@ class TenantController extends Controller
      */
     public function store( Request $request)
     {
-      
+
         $request->validate([
-            'id'=>'required',
+            'id'=>'required|unique:tenants',
         ]);
         $NewInquilino = Tenant::create($request ->all());
-       
+
         $NewInquilino->domains()->create([
-            'domain' => $request->get('id') . '.certificados-residencia.test',
+            'domain' => $request->get('id') . '.' . env('DOMINIO'),
         ]);
-        return redirect()->route('inquilino.index');
-       
-       
+        return redirect()->route('tenants.index');
+
+
 
     }
 
@@ -58,19 +57,22 @@ class TenantController extends Controller
     public function show(Tenant $tenant)
     {
         return view('Tenant.show', [
-            'inquilinos' => $tenant,
+            'tenant' => $tenant,
         ]);
+
+
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Request $request, Tenant $tenant)
+    public function edit(Tenant $tenant)
     {
-        
-        dd($request->all());  
-        return view('Tenant.edit', compact('tenant'));
-    
+
+        return view('Tenant.edit',[
+            'tenant' => $tenant,
+        ]);
+
     }
 
     /**
@@ -78,10 +80,20 @@ class TenantController extends Controller
      */
     public function update(Request $request, Tenant $tenant)
     {
-       // dd($request->all()); 
-        $tenant->update($request->all()); 
-      
-        return redirect()->route('inquilino.index');
+        $request->validate([
+            'id' => 'required|unique:tenants,id,' . $tenant->id
+        ]);
+
+        $tenant->update([
+            'id' => $request->get('id'),
+        ]);
+
+        $tenant->domains()->update([
+            'domain' => $request->get('id') . '.' . env('DOMINIO')
+        ]);
+
+
+        return redirect()->route('tenants.index');
     }
 
     /**
@@ -89,9 +101,8 @@ class TenantController extends Controller
      */
     public function destroy(Tenant $tenant)
     {
-        
+
         $tenant->delete();
-        return redirect()->route('inquilino.index');
-   
+        return redirect()->route('tenants.index');
     }
 }
