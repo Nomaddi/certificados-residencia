@@ -38,10 +38,7 @@
                                         <form method="POST" action="{{route('inquilino.destroy', $inquilino) }}" >
                                             @csrf
                                             @method('DELETE')
-                                            <button class="btn-red mr-2 btn">
-                                                Eliminar
-                                            </button>
-
+                                            <input type = "submit" value="Delete" class="btn-red mr-2 btn"/>
                                         </form>    
 
                                         <a href="{{route('inquilino.edit', $inquilino) }}" class=" btn-blue btn "> 

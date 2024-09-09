@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Tenant;
 use Illuminate\Http\Request;
 use Stancl\Tenancy\Contracts\StorageDriver;
+use Stancl\Tenancy\Events\TenantDeleted;
 use Illuminate\Validation\Rules\Unique;
 
 class TenantController extends Controller
@@ -83,11 +84,9 @@ class TenantController extends Controller
      */
     public function destroy(Tenant $tenant)
     {
-       
+        
         $tenant->delete();
-
         return redirect()->route('inquilino.index');
-          
    
     }
 }
