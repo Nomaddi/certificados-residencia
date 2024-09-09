@@ -24,8 +24,9 @@
                     </tr>
                     </thead>
                     <tbody>
+                        
                         @foreach ($inquilinos as $inquilino)
-                                                               
+                                                         
                             <tr class="bg-white border-b text-gray-700">
                                 <th scope="row" class="px-6 py-4 ">
                                     {{$inquilino->id}}

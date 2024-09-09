@@ -16,7 +16,9 @@ class TenantController extends Controller
     public function index()
     {
         $inquilinos = Tenant::all();
-        return view('Tenant.index', compact('inquilinos'));
+        return view('Tenant.index', [
+            'inquilinos' => $inquilinos,
+        ]);
     
     
 
@@ -63,11 +65,11 @@ class TenantController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Tenant $tenant)
+    public function edit(Request $request, Tenant $tenant)
     {
-        return view('Tenant.edit', [
-            'inquilinos' => $tenant,
-        ]);
+        
+        dd($request->all());  
+        return view('Tenant.edit', compact('tenant'));
     
     }
 
@@ -76,7 +78,10 @@ class TenantController extends Controller
      */
     public function update(Request $request, Tenant $tenant)
     {
-        //
+       // dd($request->all()); 
+        $tenant->update($request->all()); 
+      
+        return redirect()->route('inquilino.index');
     }
 
     /**
