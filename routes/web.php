@@ -3,7 +3,6 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TenantController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TipoDocumentoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,7 +29,10 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('/tenants', TenantController::class)->except(['show']);
 
-    Route::get('/tipodocumento',[TipoDocumentoController::class, 'index'])->name('tipodocumento.index');
+    
+
+
+
 });
 
 require __DIR__.'/auth.php';

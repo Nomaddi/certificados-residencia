@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
 use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
 use Stancl\Tenancy\Middleware\InitializeTenancyBySubdomain;
+use App\Http\Controllers\TipoDocumentoController;
+
 /*
 |--------------------------------------------------------------------------
 | Tenant Routes
@@ -39,6 +41,15 @@ Route::middleware([
         // Route::get('/settings', function () {
         //     return view('Tenancy.settings');
         // })->name('settings');
+
+
+    Route::get('/documento',[TipoDocumentoController::class, 'index'])->name('documento.index');
+    Route::get('/documento',[TipoDocumentoController::class, 'create'])->name('documento.create');
+    Route::post('/documento',[TipoDocumentoController::class, 'store'])->name('documento.store');
+    Route::get('/documento/{documento}',[TipoDocumentoController::class, 'edit'])->name('documento.edit');
+    Route::put('/documento/{documento}',[TipoDocumentoController::class, 'update'])->name('documento.update');
+    Route::delete('/documento/{documento}',[TipoDocumentoController::class, 'destroy'])->name('documento.destroy');
+
     });
 
     require __DIR__.'/auth.php';

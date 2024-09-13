@@ -9,7 +9,9 @@ class Tipo_Documento extends Model
 {
     use HasFactory;
     //datos que se complementan
-    protected $fillable =[];
+    protected $fillable =[
+        'tipoDocumento'
+    ];
     //datos no complementables
     protected $guarded=[];
     //regla a cumplir
