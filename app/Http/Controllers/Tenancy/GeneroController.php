@@ -2,20 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\T_Solicitante;
+use App\Models\Genero;
 use Illuminate\Http\Request;
 
-class TSolicitanteController extends Controller
+class GeneroController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $t_solicitante = T_Solicitante::all();
-        return view('documento.index', [
-            't_solicitante' => $t_solicitante,
-        ]);
+        //
     }
 
     /**
@@ -37,7 +34,7 @@ class TSolicitanteController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(T_Solicitante $t_Solicitante)
+    public function show(Genero $genero)
     {
         //
     }
@@ -45,7 +42,7 @@ class TSolicitanteController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(T_Solicitante $t_Solicitante)
+    public function edit(Genero $genero)
     {
         //
     }
@@ -53,7 +50,7 @@ class TSolicitanteController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, T_Solicitante $t_Solicitante)
+    public function update(Request $request, Genero $genero)
     {
         //
     }
@@ -61,7 +58,7 @@ class TSolicitanteController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(T_Solicitante $t_Solicitante)
+    public function destroy(Genero $genero)
     {
         //
     }

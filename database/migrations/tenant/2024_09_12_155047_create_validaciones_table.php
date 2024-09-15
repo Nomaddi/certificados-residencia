@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('validaciones', function (Blueprint $table) {
             $table->id('id_validaciones');
-            $table->foreignId('id_solicitudes')->references('id_solicitudes')->on('solicitudes');
+            $table->unsignedBigInteger('id_solicitud');
             $table->timestamp('fechaValidacion');
             $table->boolean('validacionSalud')->default(false);
             $table->string('evidenciaSalud', 255);

@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('t__solicitantes', function (Blueprint $table) {
-            $table->id('id_T_Solicitante');
-            $table->string('T_Solicitante', 50);
+        Schema::create('permisos', function (Blueprint $table) {
+            $table->id();
+            $table->string('tipoPermiso', 50);
+            $table->unsignedBigInteger('id_rol');
             $table->timestamps();
+
         });
     }
 
@@ -23,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('t__solicitantes');
+        Schema::dropIfExists('permisos');
     }
 };

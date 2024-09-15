@@ -11,7 +11,7 @@ class TipoDocumentoController extends Controller
     public function index(){
         $documento = Tipo_Documento::all();
         return view('documento.index', [
-            'Douemtno' => $documento,
+            'Documento' => $documento,
         ]);
 
     }
@@ -25,7 +25,7 @@ class TipoDocumentoController extends Controller
     {
 
         $request->validate([
-            'tipoDocumento'=>'required',
+            'Documento'=>'required',
         ]);
         Tipo_Documento::create($request ->all());
             
@@ -35,8 +35,8 @@ class TipoDocumentoController extends Controller
     
     public function edit(Tipo_Documento $documento)
     {
-        return view('documento.index', [
-            'documento' =>$documento,
+        return view('documento.edit', [
+            'Documento' =>$documento,
         ]);
     }
 
