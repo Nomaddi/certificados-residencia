@@ -9,6 +9,9 @@
 
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6">
 
+            <form action="{{-- {{route('tasks.update', $task)}} --}}" method="POST">
+            
+                @csrf
                 <div class="mb-2">
                     <x-input-label>
                     id
@@ -28,6 +31,7 @@
                         guardar
                     </button>
                 </div>
+            </form>
         </div>
     </div>  
 

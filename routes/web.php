@@ -31,18 +31,6 @@ Route::get('/dashboard', function () {
 
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/tiposDocumentos', function () {
-    return view('tiposDocumentos');
-
-})->middleware(['auth', 'verified'])->name('tiposDocumentos');
-
-Route::get('tiposDocumentos_show', function(){
-    return view('tiposDocumentos_show');
-})->middleware(['auth', 'verified'])->name('tiposDocumentos_show') ;
-
-Route::get('tiposDocumentos_edit', function(){
-    return view('tiposDocumentos_edit');
-})->middleware(['auth', 'verified'])->name('tiposDocumentos_edit') ;
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -51,7 +39,7 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('/tenants', TenantController::class)->except(['show']);
 
-
+    // Route::get('tiposdocumentos', [TipoDeDocumentoController::class, 'index']->name('tipodedocumento.index'));
 });
 
 require __DIR__.'/auth.php';

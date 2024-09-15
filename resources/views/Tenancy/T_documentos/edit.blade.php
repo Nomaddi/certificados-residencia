@@ -10,7 +10,7 @@
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6">
 
             <form action="{{-- {{route('tasks.update', $task)}} --}}" method="POST">
-               
+            
                 @csrf
 
                 @method('PUT')

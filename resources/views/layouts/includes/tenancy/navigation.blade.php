@@ -5,6 +5,7 @@
         'url' => route('dashboard'),
         'active' => request()->routeIs('dashboard')
     ],
+    
 ];
 
 @endphp

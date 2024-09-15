@@ -39,6 +39,8 @@ Route::middleware([
         // Route::get('/settings', function () {
         //     return view('Tenancy.settings');
         // })->name('settings');
+
+        
     });
 
     require __DIR__.'/auth.php';

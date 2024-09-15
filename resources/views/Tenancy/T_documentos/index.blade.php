@@ -13,10 +13,10 @@
     <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 rounded-lg">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:text-gray-400">
             <tr>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="px-6 max-mobile:px-4 py-3">
                     id
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="px-6 max-mobile:px-2 py-3">
                     tipo de documento
                 </th>
                 <th scope="col" class="px-6 py-3">
@@ -29,14 +29,14 @@
             {{-- @foreach ($collection as $item) --}}
                 
             <tr class="bg-white border-b  ">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
+                <th scope="row" class="px-6 max-mobile:px-4 py-4 font-medium text-gray-900 whitespace-nowrap ">
                     {{-- task->id --}}1
                 </th>
-                <td class="px-6 py-4 text-gray-700">
+                <td class="px-6 max-mobile:px-2 py-4 text-gray-700">
                     {{-- task->tipo_documento --}}cedula de ciudadania
                 </td>
                 </th>
-                <td class="px-6 py-4 text-gray-700">
+                <td class="px-6 max-mobile:px-2 py-4 text-gray-700">
                     <div class="flex justify-end ">
                         <a href="{{-- {{route('tasks.show', $task)}} --}}" class="btn btn-blue mx-2">ver</a>
                         <a href="" class="btn btn-green mx-2">Editar</a>

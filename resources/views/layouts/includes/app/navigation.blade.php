@@ -11,12 +11,7 @@
         'url' => route('tenants.index'),
         'active' => request()->routeIs('inquilino.index')
     ],
-    [
-
-        'name'=> 'Tipos de documentos',
-        'url' => route('tiposDocumentos_show'),
-        'active' => request()->routeIs('tiposDocumentos_show')
-    ],
+    
 ];
 
 @endphp
