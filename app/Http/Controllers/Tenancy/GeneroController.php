@@ -1,9 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\tenancy;
+
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 use App\Models\Genero;
-use Illuminate\Http\Request;
+
 
 class GeneroController extends Controller
 {

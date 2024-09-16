@@ -1,11 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\tenancy;
 
-use App\Models\Solicitantes;
+
+use App\Http\Controllers\Controller;
+
+use App\Models\Solicitante;
 use Illuminate\Http\Request;
 
-class SolicitantesController extends Controller
+class SolicitanteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +37,7 @@ class SolicitantesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Solicitantes $solicitantes)
+    public function show(Solicitante $solicitante)
     {
         //
     }
@@ -42,7 +45,7 @@ class SolicitantesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Solicitantes $solicitantes)
+    public function edit(Solicitante $solicitante)
     {
         //
     }
@@ -50,7 +53,7 @@ class SolicitantesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Solicitantes $solicitantes)
+    public function update(Request $request, Solicitante $solicitante)
     {
         //
     }
@@ -58,7 +61,7 @@ class SolicitantesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Solicitantes $solicitantes)
+    public function destroy(Solicitante $solicitante)
     {
         //
     }

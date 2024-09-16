@@ -5,6 +5,11 @@
         'url' => route('dashboard'),
         'active' => request()->routeIs('dashboard')
     ],
+    [
+        'name'=> 'Tipo de Documento',
+        'url' => route('documento.create'),
+        'active' => request()->routeIs('documento.*')
+    ],
 ];
 
 @endphp

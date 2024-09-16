@@ -1,6 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\tenancy;
+
+
+use App\Http\Controllers\Controller;
 
 use App\Models\T_Solicitante;
 use Illuminate\Http\Request;

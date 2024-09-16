@@ -1,7 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\tenancy;
 
+
+use App\Http\Controllers\Controller;
 use App\Models\Direccion;
 use Illuminate\Http\Request;
 
