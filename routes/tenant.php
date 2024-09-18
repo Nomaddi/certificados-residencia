@@ -8,6 +8,7 @@ use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
 use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
 use Stancl\Tenancy\Middleware\InitializeTenancyBySubdomain;
 use App\Http\Controllers\tenancy\tDocumentoController;
+use App\Http\Controllers\tenancy\BarrioController;
 
 
 /*
@@ -52,7 +53,26 @@ Route::middleware([
     Route::put('/documento/{tDocumento}/update',[tDocumentoController::class, 'update'])->name('documento.update');
     Route::delete('/documento/{tDocumento}',[tDocumentoController::class, 'destroy'])->name('documento.destroy');
 
+    Route::controller(BarrioController::class)->group(function(){
+        route::get('barrio','index')->name('barrio.index');
+        route::get('barrio/create','create')->name('barrio.create');
+        route::post('barrio','store')->name('nEstudio.store');
+        route::get('barrio/{barrio}/edit','edit')->name('barrio.edit');
+        route::pust('barrio/{barrio}/update', 'update')->name('barrio.update');
+        route::delete('barrio/{barrio}/delete','delete')->name('barrio.delete');
+    });
 
+    Route::controller(nEstudioController::class)->group(function(){
+        route::get('nEstudio','index')->name('nEstudio.index');
+        route::get('nEstudio/create','create')->name('nEstudio.create');
+        route::post('nEstudio','store')->name('nEstudio.store');
+        route::get('nEstudio/{nEstudio}/edit','edit')->name('nEstudio.edit');
+        route::pust('nEstudio/{nEstudio}/update', 'update')->name('nEstudio.update');
+        route::delete('nEstudio/{nEstudio}/delete','delete')->name('nEstudio.delete');
+    });
+
+    
+    
         
  
 

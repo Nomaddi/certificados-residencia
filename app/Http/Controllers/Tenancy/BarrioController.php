@@ -58,7 +58,7 @@ class BarrioController extends Controller
      */
     public function edit(Barrio $barrio)
     {
-        return view('Tenancy.barrio.edit');
+        return view('Tenancy.barrio.edit', compact('barrio'));
     }
 
     /**
