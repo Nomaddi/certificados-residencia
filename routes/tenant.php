@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
 use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
 use Stancl\Tenancy\Middleware\InitializeTenancyBySubdomain;
-use App\Http\Controllers\tenancy\DocumentoController;
+use App\Http\Controllers\tenancy\tDocumentoController;
 
 
 /*
@@ -45,12 +45,20 @@ Route::middleware([
         // })->name('settings');
 
 
-    Route::get('/documento/index',[DocumentoController::class, 'index'])->name('documento.index');
-    Route::get('/documento',[DocumentoController::class, 'create'])->name('documento.create');
-    Route::post('/documento',[DocumentoController::class, 'store'])->name('documento.store');
-    Route::get('/documento/{documento}',[DocumentoController::class, 'edit'])->name('documento.edit');
-    Route::put('/documento/{documento}',[DocumentoController::class, 'update'])->name('documento.update');
-    Route::delete('/documento/{documento}',[DocumentoController::class, 'destroy'])->name('documento.destroy');
+    Route::get('/documento',[tDocumentoController::class, 'index'])->name('documento.index');
+    Route::get('/documento/create',[tDocumentoController::class, 'create'])->name('documento.create');
+    Route::post('/documento',[tDocumentoController::class, 'store'])->name('documento.store');
+    Route::get('/documento/{tDocumento}/edit',[tDocumentoController::class, 'edit'])->name('documento.edit');
+    Route::put('/documento/{tDocumento}/update',[tDocumentoController::class, 'update'])->name('documento.update');
+    Route::delete('/documento/{tDocumento}',[tDocumentoController::class, 'destroy'])->name('documento.destroy');
+
+
+        
+ 
+
+
+
+
 
     });
 

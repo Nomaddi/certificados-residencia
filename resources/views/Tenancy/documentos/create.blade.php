@@ -24,7 +24,7 @@
                     Tipo de documento
                     </x-input-label>
                 </div>
-                <x-text-input type='text' name='n_documento' class="w-full" placeholder='Ingrese el nombre del documento' />
+                <x-text-input type='text' name='tipoDocumento' class="w-full" placeholder='Ingrese el nombre del documento' />
 
                 <div class="flex justify-end">
                     <button class="btn btn-blue mt-4">

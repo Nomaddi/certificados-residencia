@@ -9,7 +9,7 @@
 
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6">
 
-            <form action="{{-- {{route('tasks.update', $task)}} --}}" method="POST">
+            <form action="{{route('documento.update', $tDocumento->id)}}" method="POST">
             
                 @csrf
 
@@ -20,7 +20,7 @@
                     id
                     </x-input-label>
 
-                    <x-text-input type='text' name='id' class="w-full" value='{{-- {{old('id', $task->id)}} --}}' placeholder='Ingrese el id' />
+                    <x-text-input type='text' name='id' class="w-full" value=" {{old('id', $tDocumento->id)}} " placeholder='Ingrese el id' />
                 </div>
 
                 <div class="mb-2 mt-4">
@@ -28,7 +28,7 @@
                     Tipo de documento
                     </x-input-label>
 
-                    <x-text-input type='text' name='tipoDocumento' class="w-full" value='{{-- {{old('tipoDocumento', $task->tipoDocument)}} --}}' placeholder='Ingrese el nombre del documento' />
+                    <x-text-input type='text' name='tipoDocumento' class="w-full" value="{{old('tipoDocumento', $tDocumento->tipoDocument)}} " placeholder='Ingrese el nombre del documento' />
                 </div>
 
                 <div class="flex justify-end">

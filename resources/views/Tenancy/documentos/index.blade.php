@@ -26,26 +26,26 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($documentos as $documento) --}}
+            @foreach ($tDocumento as $tDocument) 
                 
             <tr class="bg-white border-b  ">
                 <th scope="row" class="px-6 max-mobile:px-4 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                    {{$documento->id_tipoDocumento }}
+                    {{$tDocument->id }}
                 </th>
                 <td class="px-6 max-mobile:px-2 py-4 text-gray-700">
-                    {{$documento->tipoDocumento }}
+                    {{$tDocument->tipoDocumento }}
                 </td>
                 </th>
                 <td class="px-6 max-mobile:px-2 py-4 text-gray-700">
                     <div class="flex justify-end ">
-                        <a href=" {{route('documento.edit', $documento)}} " class="btn btn-blue mx-2">ver</a>
-                        <a href="" class="btn btn-green mx-2">Editar</a>
+                        <a href=" {{route('documento.edit',  $tDocument->id) }} " class="btn btn-blue mx-2">Editar</a>
                         
-                        <form action="" method="POST"> 
+                        
+                        <form action="{{route('documento.destroy', $tDocument->id)}}"" method="POST"> 
                             @csrf
 
                             @method('DELETE')
-                        <button href="" class="btn btn-red mx-2">Eliminar</button>
+                        <button  class="btn btn-red mx-2">Eliminar</button>
                         </form>
                     </div>    
                 </td>
