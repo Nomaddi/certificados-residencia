@@ -11,10 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('t_documentos', function (Blueprint $table) {
+        Schema::create('permisos', function (Blueprint $table) {
             $table->id();
-            $table->string('tipoDocumento', 100);
-            $table->unsignedBigInteger('solicitante_id');
+            $table->string('tipoPermiso', 100);
             $table->timestamps();
         });
     }
@@ -24,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('t_documentos');
+        Schema::dropIfExists('permisos');
     }
 };

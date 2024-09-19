@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('t_documentos', function (Blueprint $table) {
+        Schema::create('direcciones', function (Blueprint $table) {
             $table->id();
-            $table->string('tipoDocumento', 100);
-            $table->unsignedBigInteger('solicitante_id');
+            $table->string('direccion', 100);
+            $table->string('conjunto',50)->nullable();
+            $table->string('casa/apto',50)->nullable();
+            $table->unsignedBigInteger('barrio_id');
             $table->timestamps();
         });
     }
@@ -24,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('t_documentos');
+        Schema::dropIfExists('direcciones');
     }
 };

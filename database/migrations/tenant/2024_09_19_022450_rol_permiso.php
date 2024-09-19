@@ -7,16 +7,18 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Run the migrations.
+     * Tabla intermedia entre Rol y permisos para muchos a muchos
      */
     public function up(): void
     {
-        Schema::create('t_documentos', function (Blueprint $table) {
+        
+        Schema::create('rol_permiso', function (Blueprint $table) {
             $table->id();
-            $table->string('tipoDocumento', 100);
-            $table->unsignedBigInteger('solicitante_id');
+            $table->foreignId('role_id')->constrained()->onDelete('cascade');
+            $table->foreignId('permission_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
+
     }
 
     /**
@@ -24,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('t_documentos');
+        Schema::dropIfExists('rol_permiso');
     }
 };

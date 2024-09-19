@@ -5,15 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class nEstudio extends Model
+class Genero extends Model
 {
     use HasFactory;
     protected $guarded =[];
 
-    public function solicitantes()
+    public function solicitante()
     {
-        return $this->hasMany(Solicitante::class,'nEstudio_id','id');
+        return $this->hasMany(Solicitante::class,'genero_id','id');
     }
+
 
 
 
