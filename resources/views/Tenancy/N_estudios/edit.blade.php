@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Tipos de documentos') }}
+            {{ __('Nivel de estudio') }}
         </h2>
     </x-slot>
 
@@ -25,10 +25,10 @@
 
                 <div class="mb-2 mt-4">
                     <x-input-label>
-                    Tipo de documento
+                    nivel de estudio
                     </x-input-label>
 
-                    <x-text-input type='text' name='tipoDocumento' class="w-full" value='{{-- {{old('tipoDocumento', $task->tipoDocument)}} --}}' placeholder='Ingrese el nuevo nombre del documento' />
+                    <x-text-input type='text' name='tipoDocumento' class="w-full" value='{{-- {{old('tipoDocumento', $task->tipoDocument)}} --}}' placeholder='Ingrese el nuevo nivel de estudio' />
                 </div>
 
                 <div class="flex justify-end">

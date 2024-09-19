@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Tipos de documentos') }}
+            {{ __('Nivel de estudio') }}
         </h2>
     </x-slot>
 
@@ -12,32 +12,29 @@
             <form action="{{-- {{route('tasks.update', $task)}} --}}" method="POST">
             
                 @csrf
-
-                @method('PUT')
-
                 <div class="mb-2">
                     <x-input-label>
                     id
                     </x-input-label>
-
-                    <x-text-input type='text' name='id' class="w-full" value='{{-- {{old('id', $task->id)}} --}}' placeholder='Ingrese el nuevo id' />
+                    <x-text-input type='text' name='id' class="w-full" placeholder='Ingrese el id' />
                 </div>
 
                 <div class="mb-2 mt-4">
                     <x-input-label>
-                    Tipo de documento
+                    Nivel de estudio
                     </x-input-label>
-
-                    <x-text-input type='text' name='tipoDocumento' class="w-full" value='{{-- {{old('tipoDocumento', $task->tipoDocument)}} --}}' placeholder='Ingrese el nuevo nombre del documento' />
+                    <x-text-input type='text' name='id' class="w-full" placeholder='Ingrese el nivel de estudio' />
                 </div>
 
                 <div class="flex justify-end">
                     <button class="btn btn-blue mt-4">
-
+                        
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"  class="block sm:hidden w-6 h-6 size-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
                         </svg>
-                        <p class="hidden sm:block">Actualizar</p>
+                        
+                        <span class="hidden sm:block">Agregar</span>
+                        
                     </button>
                 </div>
             </form>

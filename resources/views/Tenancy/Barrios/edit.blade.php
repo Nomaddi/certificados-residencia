@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Tipos de documentos') }}
+            {{ __('Barrios') }}
         </h2>
     </x-slot>
 
@@ -19,16 +19,35 @@
                     <x-input-label>
                     id
                     </x-input-label>
-
-                    <x-text-input type='text' name='id' class="w-full" value='{{-- {{old('id', $task->id)}} --}}' placeholder='Ingrese el nuevo id' />
+                    <x-text-input type='text' name='id' class="w-full" placeholder='Ingrese el nuevo id' />
                 </div>
 
                 <div class="mb-2 mt-4">
                     <x-input-label>
-                    Tipo de documento
+                    nombre del barrio
                     </x-input-label>
+                    <x-text-input type='text' name='nombre_barrio' class="w-full" placeholder='Ingrese el nuevo nombre del barrio' />
+                </div>
 
-                    <x-text-input type='text' name='tipoDocumento' class="w-full" value='{{-- {{old('tipoDocumento', $task->tipoDocument)}} --}}' placeholder='Ingrese el nuevo nombre del documento' />
+                <div class="mb-2 mt-4">
+                    <x-input-label>
+                    upz
+                    </x-input-label>
+                    <x-text-input type='text' name='upz' class="w-full" placeholder='Ingrese el nuevo upz' />
+                </div>
+
+                <div class="mb-2 mt-4">
+                    <x-input-label>
+                    tipo
+                    </x-input-label>
+                    <x-text-input type='text' name='tipo_barrio' class="w-full" placeholder='Ingrese el nuevo tipo' />
+                </div>
+
+                <div class="mb-2 mt-4">
+                    <x-input-label>
+                    sector
+                    </x-input-label>
+                    <x-text-input type='text' name='sector_barrio' class="w-full" placeholder='Ingrese el nuevo sector' />
                 </div>
 
                 <div class="flex justify-end">
