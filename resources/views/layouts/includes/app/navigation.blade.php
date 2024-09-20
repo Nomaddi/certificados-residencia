@@ -11,6 +11,7 @@
         'url' => route('tenants.index'),
         'active' => request()->routeIs('inquilino.index')
     ],
+    
 ];
 
 @endphp

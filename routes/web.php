@@ -19,9 +19,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::get('/dashboard', function () {
     return view('dashboard');
+
+    
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+
+})->middleware(['auth', 'verified'])->name('dashboard');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -30,7 +39,7 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('/tenants', TenantController::class)->except(['show']);
 
-
+    // Route::get('tiposdocumentos', [TipoDeDocumentoController::class, 'index']->name('tipodedocumento.index'));
 });
 
 require __DIR__.'/auth.php';
