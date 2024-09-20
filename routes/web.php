@@ -3,7 +3,6 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TenantController;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,8 +37,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::resource('/tenants', TenantController::class)->except(['show']);
-
-    // Route::get('tiposdocumentos', [TipoDeDocumentoController::class, 'index']->name('tipodedocumento.index'));
 });
 
 require __DIR__.'/auth.php';
