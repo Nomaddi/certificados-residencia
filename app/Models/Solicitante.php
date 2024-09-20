@@ -9,7 +9,7 @@ class Solicitante extends Model
 {
     use HasFactory;
     protected $guarded = [];
-    
+
     //Relacion con tabla solicitud
     public function solicitud()
     {
@@ -36,9 +36,10 @@ class Solicitante extends Model
     {
         return $this->belongsTo(Genero::class,'genero_id','id');
     }
-    public function rol()
+
+    public function user()
     {
-        return $this->belongsTo(Rol::class,'rol_id','id');
+        return $this->belongsTo(User::class);
     }
 
 }
