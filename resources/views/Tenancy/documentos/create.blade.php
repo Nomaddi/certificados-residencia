@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-tenancy-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Tipos de documentos') }}
@@ -10,7 +10,7 @@
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6">
 
             <form action=" {{route('documento.store')}}" method="POST">
-            
+
                 @csrf
                 <div class="mb-2">
                     <x-input-label>
@@ -33,6 +33,6 @@
                 </div>
             </form>
         </div>
-    </div>  
+    </div>
 
-</x-app-layout>
+</x-tenancy-layout>

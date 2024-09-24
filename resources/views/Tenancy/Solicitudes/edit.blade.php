@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-tenancy-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Solicitudes') }}
@@ -10,7 +10,7 @@
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6">
 
             <form action="{{-- {{route('tasks.update', $task)}} --}}" method="POST">
-            
+
                 @csrf
 
                 @method('PUT')
@@ -31,7 +31,7 @@
 
                 <div class="mb-2 mt-4">
                     <x-input-label>
-                    numero de identificacion 
+                    numero de identificacion
                     </x-input-label>
                     <x-text-input type='text' name='fecha_validacion' class="w-full" placeholder='Ingrese el nuevo numero de identificacion ' />
                 </div>
@@ -82,6 +82,6 @@
                 </div>
             </form>
         </div>
-    </div>  
+    </div>
 
-</x-app-layout>
+</x-tenancy-layout>

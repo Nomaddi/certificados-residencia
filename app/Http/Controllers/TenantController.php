@@ -15,7 +15,7 @@ class TenantController extends Controller
      */
     public function index()
     {
-        return view('Tenant.index', [
+        return view('Tenant.inquilinos.index', [
             'tenants' => Tenant::all(),
         ]);
 
@@ -28,23 +28,35 @@ class TenantController extends Controller
      */
     public function create()
     {
-        return view('Tenant.create');
+        return view('Tenant.inquilinos.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store( Request $request)
+    public function store(Request $request)
     {
 
         $request->validate([
-            'id'=>'required|unique:tenants',
+            'id' => 'required|unique:tenants',
         ]);
-        $NewInquilino = Tenant::create($request ->all());
+        $NewInquilino = Tenant::create($request->all());
 
         $NewInquilino->domains()->create([
             'domain' => $request->get('id') . '.' . env('DOMINIO'),
         ]);
+
+        // Cambiar al contexto del nuevo tenant
+        tenancy()->initialize($NewInquilino);
+
+        // Ejecutar el seeder para crear los roles y usuarios del tenant
+        \Artisan::call('db:seed', [
+            '--class' => 'Database\\Seeders\\Tenant\\TenantRolesAndUsersSeeder',
+        ]);
+
+        // Restaurar el contexto al sistema principal
+        tenancy()->end();
+
         return redirect()->route('tenants.index');
 
 
@@ -56,7 +68,7 @@ class TenantController extends Controller
      */
     public function show(Tenant $tenant)
     {
-        return view('Tenant.show', [
+        return view('Tenant.inquilinos.show', [
             'tenant' => $tenant,
         ]);
 
@@ -69,7 +81,7 @@ class TenantController extends Controller
     public function edit(Tenant $tenant)
     {
 
-        return view('Tenant.edit',[
+        return view('Tenant.inquilinos.edit', [
             'tenant' => $tenant,
         ]);
 

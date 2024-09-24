@@ -62,7 +62,7 @@ class SolicitanteController extends Controller
     public function edit(Solicitante $solicitante)
     {
         return Redirect()->route('solicitante.edit', compact('solicitante'));
-    
+
     }
 
     /**
